@@ -20,4 +20,5 @@ inators
    :caption: Miscellaneous
    :maxdepth: 1
 
+   relnotes
    license
