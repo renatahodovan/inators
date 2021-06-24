@@ -2,6 +2,15 @@
 inators
 =======
 
+.. image:: https://img.shields.io/pypi/v/inators?logo=python&logoColor=white
+   :target: https://pypi.org/project/inators/
+.. image:: https://img.shields.io/pypi/l/inators?logo=open-source-initiative&logoColor=white
+   :target: https://pypi.org/project/inators/
+.. image:: https://img.shields.io/github/workflow/status/renatahodovan/inators/main/master?logo=github&logoColor=white
+   :target: https://github.com/renatahodovan/inators/actions
+.. image:: https://img.shields.io/coveralls/github/renatahodovan/inators/master?logo=coveralls&logoColor=white
+   :target: https://coveralls.io/github/renatahodovan/inators
+
 .. start included documentation
 
 ``inators`` is a collection of useful utilities mostly used by the *...inator*
