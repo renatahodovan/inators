@@ -21,22 +21,35 @@ Requirements
 ============
 
 * Python_ ~= 2.7 or >= 3.5
-* pip_
 
 .. _Python: https://www.python.org
-.. _pip: https://pip.pypa.io
 
 
 Install
 =======
 
-The quick way::
+To use *inators* in another project, it can be added to ``setup.cfg`` as an
+install requirement (if using setuptools_ with declarative config):
+
+.. code-block:: ini
+
+    [options]
+    install_requires =
+        inators
+
+To install *inators* manually, e.g., into a virtual environment, use pip_::
 
     pip install inators
 
-Alternatively, by cloning the project and performing a local install::
+The above approaches install the latest release of *inators* from PyPI_.
+Alternatively, for the development version, clone the project and perform a
+local install::
 
     pip install .
+
+.. _setuptools: https://github.com/pypa/setuptools
+.. _pip: https://pip.pypa.io
+.. _PyPI: https://pypi.org/
 
 .. end included documentation
 
