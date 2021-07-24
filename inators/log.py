@@ -28,8 +28,6 @@ Known issues:
     new level names to numerical values.
 """
 
-from __future__ import absolute_import
-
 from logging import *
 
 

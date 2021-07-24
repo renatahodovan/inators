@@ -5,8 +5,6 @@
 # This file may not be copied, modified, or distributed except
 # according to those terms.
 
-from __future__ import absolute_import
-
 import argparse
 
 from .add_argument import add_argument
