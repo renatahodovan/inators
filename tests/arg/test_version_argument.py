@@ -13,10 +13,12 @@ from common_arg import _test_add_argument, MockArgumentParserExit
 
 
 @pytest.mark.parametrize('func_args, func_kwargs, sys_argv, exp', [
-    (['0.0.0'], {}, [], {}),
-    (['0.0.0'], {}, ['--version'], MockArgumentParserExit),
-    (['0.0.0'], {'short_alias': '-V'}, ['-V'], MockArgumentParserExit),
-    (['0.0.0'], {'long_alias': '--revision'}, ['--revision'], MockArgumentParserExit),
+    ([], {'version': '0.0.0'}, [], {}),
+    ([], {'version': '0.0.0'}, ['--version'], MockArgumentParserExit),
+    (['-V'], {'version': '0.0.0'}, ['-V'], MockArgumentParserExit),
+    ([(), '--revision'], {'version': '0.0.0'}, ['--revision'], MockArgumentParserExit),
+    ([], {'short_alias': '-V', 'version': '0.0.0'}, ['-V'], MockArgumentParserExit),
+    ([], {'long_alias': '--revision', 'version': '0.0.0'}, ['--revision'], MockArgumentParserExit),
 ])
 def test_add_version_argument(func_args, func_kwargs, sys_argv, exp):
     _test_add_argument(inators_arg.add_version_argument, func_args, func_kwargs, sys_argv, exp)

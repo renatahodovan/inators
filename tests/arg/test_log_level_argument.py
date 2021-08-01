@@ -23,6 +23,8 @@ from common_arg import _test_add_argument, MockArgumentParserError, MockNamespac
     ([], {}, ['--quiet'], {'log_level': 'DISABLE'}),
     ([], {}, ['-q'], {'log_level': 'DISABLE'}),
     ([], {}, ['--log-level', 'FOO'], MockArgumentParserError),
+    ([()], {}, ['-l', 'WARNING'], MockArgumentParserError),
+    ([(), '--logging'], {}, ['--logging', 'WARNING'], {'log_level': 'WARNING'}),
     ([], {'short_alias': ()}, ['-l', 'WARNING'], MockArgumentParserError),
     ([], {'long_alias': '--logging'}, ['--logging', 'WARNING'], {'log_level': 'WARNING'}),
     ([], {'choices': ['INFO']}, ['--log-level', 'DEBUG'], MockArgumentParserError),

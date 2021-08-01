@@ -10,19 +10,20 @@ from .add_argument import add_argument
 
 def add_version_argument(
         parser,
-        version,
         short_alias=(),
         long_alias=(),
+        *,
+        version
 ):
     """
     Add a ``--version`` command-line argument to ``parser``.
 
     :param ~argparse.ArgumentParser parser: The parser to add the argument to.
-    :param str version: The version string to show.
     :param short_alias: Add short flag alias(es) for ``--version``.
     :type short_alias: str or list(str) or tuple(str)
     :param long_alias: Add long option alias(es) for ``--version``.
     :type long_alias: str or list(str) or tuple(str)
+    :param str version: The version string to show.
 
     .. argdoc {'version':'0.0.0'}
     """

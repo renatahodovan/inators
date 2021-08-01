@@ -15,6 +15,7 @@ def add_log_level_argument(
         parser,
         short_alias='-l',
         long_alias=(),
+        *,
         metavar='LEVEL',
         choices=sorted(log.levels.keys(), key=lambda k: log.levels[k]),
         default='INFO',
@@ -24,7 +25,7 @@ def add_log_level_argument(
         verbose_help='verbose mode (alias for --log-level %(const)s)',
         quiet_alias=('-q', '--quiet'),
         quiet_const='DISABLE',
-        quiet_help='quiet mode (alias for --log-level %(const)s)',
+        quiet_help='quiet mode (alias for --log-level %(const)s)'
 ):
     """
     Add a ``--log-level`` command-line argument to ``parser``.

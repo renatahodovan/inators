@@ -17,6 +17,8 @@ from common_arg import _test_add_argument, MockArgumentParserError, MockNamespac
     ([], {}, [], {'sys_recursion_limit': sys.getrecursionlimit()}),
     ([], {}, ['--sys-recursion-limit', '42'], {'sys_recursion_limit': 42}),
     ([], {}, ['--sys-recursion-limit', 'foo'], MockArgumentParserError),
+    (['-R'], {}, ['-R', '42'], {'sys_recursion_limit': 42}),
+    ([(), '--stacksize'], {}, ['--stacksize', '42'], {'sys_recursion_limit': 42}),
     ([], {'short_alias': '-R'}, ['-R', '42'], {'sys_recursion_limit': 42}),
     ([], {'long_alias': '--stacksize'}, ['--stacksize', '42'], {'sys_recursion_limit': 42}),
     ([], {'default': 42}, [], {'sys_recursion_limit': 42}),

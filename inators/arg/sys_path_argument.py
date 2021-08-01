@@ -14,8 +14,9 @@ def add_sys_path_argument(
         parser,
         short_alias=(),
         long_alias=(),
+        *,
         metavar='DIR',
-        help='add directory to the search path for Python modules (may be specified multiple times)',
+        help='add directory to the search path for Python modules (may be specified multiple times)'
 ):
     """
     Add a ``--sys-path`` command-line argument to ``parser``.

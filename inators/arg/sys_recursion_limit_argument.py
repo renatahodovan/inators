@@ -14,12 +14,13 @@ def add_sys_recursion_limit_argument(
         parser,
         short_alias=(),
         long_alias=(),
+        *,
         metavar='NUM',
         default=sys.getrecursionlimit(),
-        help='override maximum depth of the Python interpreter stack (default: %(default)d)',
+        help='override maximum depth of the Python interpreter stack (default: %(default)d)'
 ):
     """
-    add_sys_recursion_limit_argument(parser, short_alias=(), long_alias=(), metavar='NUM', default=sys.getrecursionlimit(), help='override maximum depth of the Python interpreter stack (default: %(default)d)')
+    add_sys_recursion_limit_argument(parser, short_alias=(), long_alias=(), *, metavar='NUM', default=sys.getrecursionlimit(), help='override maximum depth of the Python interpreter stack (default: %(default)d)')
 
     Add a ``--sys-recursion-limit`` command-line argument to ``parser``.
 

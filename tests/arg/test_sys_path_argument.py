@@ -17,6 +17,8 @@ from common_arg import _test_add_argument, MockNamespace
     ([], {}, [], {'sys_path': []}),
     ([], {}, ['--sys-path', 'foo'], {'sys_path': ['foo']}),
     ([], {}, ['--sys-path', 'foo', '--sys-path', 'bar'], {'sys_path': ['foo', 'bar']}),
+    (['-L'], {}, ['-L', 'foo'], {'sys_path': ['foo']}),
+    ([(), '--pythonpath'], {}, ['--pythonpath', 'foo'], {'sys_path': ['foo']}),
     ([], {'short_alias': '-L'}, ['-L', 'foo'], {'sys_path': ['foo']}),
     ([], {'long_alias': '--pythonpath'}, ['--pythonpath', 'foo'], {'sys_path': ['foo']}),
 ])
