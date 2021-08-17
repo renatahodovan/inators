@@ -5,14 +5,10 @@
 # This file may not be copied, modified, or distributed except
 # according to those terms.
 
-import pkg_resources
+"""
+Sphinx_ extensions.
 
-from . import arg
-from . import imp
-from . import log
-from . import sphinx
+.. _Sphinx: https://www.sphinx-doc.org
+"""
 
-
-__version__ = pkg_resources.get_distribution(__package__).version
-
-del pkg_resources
+from . import argdoc

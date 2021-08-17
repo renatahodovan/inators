@@ -14,6 +14,7 @@ inators
    inators.arg
    inators.imp
    inators.log
+   inators.sphinx
 
 
 .. toctree::

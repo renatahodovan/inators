@@ -5,6 +5,42 @@
 # This file may not be copied, modified, or distributed except
 # according to those terms.
 
+"""
+Autodoc docstring processor for functions that can be called with a single
+:class:`~argparse.ArgumentParser` object (and usually register one or more
+command-line arguments with the parser).
+
+The processor looks for a comment line in the docstring that starts with
+``.. argdoc`` and replaces it with a command-line interface documentation by
+invoking the function on an empty :class:`~argparse.ArgumentParser` object and
+then formatting the parser's brief usage and argument help messages.
+
+The comment line can end in an expression that safely evaluates to a dictionary
+(with :func:`ast.literal_eval`). The dictionary will be treated as keyword
+arguments to be passed to the function when invoked.
+
+Example
+    .. code-block:: python
+
+        def add_foo_argument(parser):
+            '''
+            Add ``--foo`` command-line argument to ``parser``.
+            .. argdoc
+            '''
+            parser.add_argument('--foo', help='foo argument')
+
+See the :mod:`inators.arg` module for functions that use such CLI documentation.
+
+To use the docstring processor, ``conf.py`` shall list it among the extensions:
+
+.. code-block:: python
+
+    extensions = [
+        'sphinx.ext.autodoc',
+        'inators.sphinx.argdoc',
+    ]
+"""
+
 import argparse
 import ast
 import re
@@ -12,31 +48,6 @@ import textwrap
 
 
 def argdoc(app, what, name, obj, options, lines):
-    """
-    Autodoc docstring processor for functions that can be called with a single
-    :class:`argparse.ArgumentParser` object (and usually register one or more
-    command-line arguments with the parser).
-
-    The processor looks for a comment line in the docstring that starts with
-    ``.. argdoc`` and replaces it with a command-line interface documentation
-    by invoking the function on an empty :class:`argparse.ArgumentParser` object
-    and then formatting the parser's brief usage and argument help messages.
-
-    The comment line can end in an expression that safely evaluates to a
-    dictionary (with :func:`ast.literal_eval`). The dictionary will be treated
-    as keyword arguments to be passed to the function when invoked.
-
-    Example
-        .. code-block:: python
-
-            def add_foo_argument(parser):
-                '''
-                Add ``--foo`` command-line argument to ``parser``.
-                .. argdoc
-                '''
-                parser.add_argument('--foo', help='foo argument')
-    """
-
     if what != 'function':
         return
 
@@ -56,7 +67,7 @@ def argdoc(app, what, name, obj, options, lines):
 
             """) + textwrap.indent(parser.format_help(), ' ' * 8)
             replacement = textwrap.indent(replacement, indent).splitlines()
-            lines[i:i+1] = replacement[:]
+            lines[i:i + 1] = replacement[:]
             break
 
     # make sure there is a blank line at the end
