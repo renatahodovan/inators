@@ -36,6 +36,7 @@ def add_argument(parser, *args, **kwargs):
                     parser,
                     short_alias='-f',
                     long_alias=(),
+                    *,
                     metavar='FOO',
                     default='xyz',
                     help='set foo (default: %(default)s)'
