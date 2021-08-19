@@ -4,6 +4,17 @@
 
 .. start included documentation
 
+2.1.0
+=====
+
+Summary of changes:
+
+* New module ``inators.sphinx`` to document command-line argument utility code
+  (e.g., ``inators.arg``).
+* Dropped runtime dependency on setuptools.
+* Improved documentation.
+
+
 2.0.0
 =====
 
