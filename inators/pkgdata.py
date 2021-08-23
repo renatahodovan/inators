@@ -5,9 +5,10 @@
 # This file may not be copied, modified, or distributed except
 # according to those terms.
 
-from .pkgdata import __version__
+try:
+    from importlib import metadata
+except ImportError:
+    import importlib_metadata as metadata
 
-from . import arg
-from . import imp
-from . import log
-from . import sphinx
+
+__version__ = metadata.version(__package__)
