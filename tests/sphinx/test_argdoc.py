@@ -18,7 +18,8 @@ def add_foo_argument(parser):
     '''
     parser.add_argument('--foo', help='foo argument')
 
-add_foo_argument.argdoc = '''
+add_foo_argument.argdoc = [
+    '''
     Add ``--foo`` command-line argument to ``parser``.
 
 
@@ -30,7 +31,21 @@ add_foo_argument.argdoc = '''
             optional arguments:
               --foo FOO  foo argument
 
+    ''',
     '''
+    Add ``--foo`` command-line argument to ``parser``.
+
+
+    Command-line interface
+        .. code-block:: none
+
+            usage: [--foo FOO]
+
+            options:
+              --foo FOO  foo argument
+
+    ''',
+]
 
 def add_bar_argument(parser, *, bar):
     '''
@@ -39,7 +54,8 @@ def add_bar_argument(parser, *, bar):
     '''
     parser.add_argument('--bar', default=bar, help='bar argument (default: %(default)s)')
 
-add_bar_argument.argdoc = '''
+add_bar_argument.argdoc = [
+    '''
     Add ``--bar`` command-line argument to ``parser``.
 
 
@@ -51,7 +67,21 @@ add_bar_argument.argdoc = '''
             optional arguments:
               --bar BAR  bar argument (default: 42)
 
+    ''',
     '''
+    Add ``--bar`` command-line argument to ``parser``.
+
+
+    Command-line interface
+        .. code-block:: none
+
+            usage: [--bar BAR]
+
+            options:
+              --bar BAR  bar argument (default: 42)
+
+    ''',
+]
 
 
 @pytest.mark.parametrize('add_argument', [
@@ -61,4 +91,5 @@ add_bar_argument.argdoc = '''
 def test_argdoc(add_argument):
     lines = textwrap.dedent(add_argument.__doc__).splitlines()
     inators_sphinx.argdoc.argdoc(None, type(add_argument).__name__, add_argument.__name__, add_argument, None, lines)
-    assert lines == textwrap.dedent(add_argument.argdoc).splitlines()
+    lines = ''.join(lines)
+    assert lines in [''.join(textwrap.dedent(argdoc).splitlines()) for argdoc in add_argument.argdoc]
