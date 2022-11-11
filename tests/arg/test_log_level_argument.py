@@ -1,4 +1,4 @@
-# Copyright (c) 2021 Renata Hodovan, Akos Kiss.
+# Copyright (c) 2021-2022 Renata Hodovan, Akos Kiss.
 #
 # Licensed under the BSD 3-Clause License
 # <LICENSE.rst or https://opensource.org/licenses/BSD-3-Clause>.
@@ -45,6 +45,6 @@ def test_add_log_level_argument(func_args, func_kwargs, sys_argv, exp):
 ])
 def test_process_log_level_argument(level_name, exp_level_value):
     args = MockNamespace(log_level=level_name)
-    logger = logging.getLogger('{}.logger{}'.format(__name__, level_name))
+    logger = logging.getLogger(f'{__name__}.logger{level_name}')
     inators_arg.process_log_level_argument(args, logger)
     assert logger.getEffectiveLevel() == exp_level_value

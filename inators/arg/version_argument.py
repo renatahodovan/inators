@@ -1,4 +1,4 @@
-# Copyright (c) 2021 Renata Hodovan, Akos Kiss.
+# Copyright (c) 2021-2022 Renata Hodovan, Akos Kiss.
 #
 # Licensed under the BSD 3-Clause License
 # <LICENSE.rst or https://opensource.org/licenses/BSD-3-Clause>.
@@ -30,4 +30,4 @@ def add_version_argument(
 
     add_argument(parser, short_alias, '--version', long_alias,
                  action='version',
-                 version='%(prog)s {version}'.format(version=version))
+                 version=f'%(prog)s {version}')

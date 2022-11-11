@@ -1,4 +1,4 @@
-# Copyright (c) 2021 Renata Hodovan, Akos Kiss.
+# Copyright (c) 2021-2022 Renata Hodovan, Akos Kiss.
 #
 # Licensed under the BSD 3-Clause License
 # <LICENSE.rst or https://opensource.org/licenses/BSD-3-Clause>.
@@ -33,7 +33,7 @@ def test_level_names(level, value):
     (inators_log.DISABLE, logging.CRITICAL, False),
 ])
 def test_level_values(logger_level, msg_level, enabled):
-    logger = logging.getLogger('{}.logger{}'.format(__name__, logger_level))
+    logger = logging.getLogger(f'{__name__}.logger{logger_level}')
     logger.setLevel(logger_level)
     assert logger.isEnabledFor(msg_level) == enabled
 
@@ -44,7 +44,7 @@ def test_level_values(logger_level, msg_level, enabled):
     (inators_log.DISABLE, u'baz', u''),
 ])
 def test_trace(logger_level, msg, output):
-    logger = inators_log.getLogger('{}.trace'.format(__name__))
+    logger = inators_log.getLogger(f'{__name__}.trace')
     logger.setLevel(logger_level)
     stream = io.StringIO()
     logger.addHandler(logging.StreamHandler(stream=stream))
