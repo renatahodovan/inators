@@ -20,7 +20,7 @@ project family, whence its name.
 Requirements
 ============
 
-* Python_ >= 3.6
+* Python_ >= 3.7
 
 .. _Python: https://www.python.org
 
