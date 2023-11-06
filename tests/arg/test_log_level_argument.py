@@ -1,4 +1,4 @@
-# Copyright (c) 2021-2022 Renata Hodovan, Akos Kiss.
+# Copyright (c) 2021-2023 Renata Hodovan, Akos Kiss.
 #
 # Licensed under the BSD 3-Clause License
 # <LICENSE.rst or https://opensource.org/licenses/BSD-3-Clause>.
@@ -11,7 +11,7 @@ import pytest
 from inators import arg as inators_arg
 from inators import log as inators_log
 
-from common_arg import _test_add_argument, MockArgumentParserError, MockNamespace
+from .common_arg import _test_add_argument, MockArgumentParserError, MockNamespace
 
 
 @pytest.mark.parametrize('func_args, func_kwargs, sys_argv, exp', [

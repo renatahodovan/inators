@@ -1,12 +1,13 @@
-# Copyright (c) 2021 Renata Hodovan, Akos Kiss.
+# Copyright (c) 2021-2023 Renata Hodovan, Akos Kiss.
 #
 # Licensed under the BSD 3-Clause License
 # <LICENSE.rst or https://opensource.org/licenses/BSD-3-Clause>.
 # This file may not be copied, modified, or distributed except
 # according to those terms.
 
-import pytest
 import textwrap
+
+import pytest
 
 from inators import sphinx as inators_sphinx
 
@@ -17,6 +18,7 @@ def add_foo_argument(parser):
     .. argdoc
     '''
     parser.add_argument('--foo', help='foo argument')
+
 
 add_foo_argument.argdoc = [
     '''
@@ -47,12 +49,14 @@ add_foo_argument.argdoc = [
     ''',
 ]
 
+
 def add_bar_argument(parser, *, bar):
     '''
     Add ``--bar`` command-line argument to ``parser``.
     .. argdoc {'bar': 42}
     '''
     parser.add_argument('--bar', default=bar, help='bar argument (default: %(default)s)')
+
 
 add_bar_argument.argdoc = [
     '''

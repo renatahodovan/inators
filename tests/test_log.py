@@ -1,4 +1,4 @@
-# Copyright (c) 2021-2022 Renata Hodovan, Akos Kiss.
+# Copyright (c) 2021-2023 Renata Hodovan, Akos Kiss.
 #
 # Licensed under the BSD 3-Clause License
 # <LICENSE.rst or https://opensource.org/licenses/BSD-3-Clause>.
@@ -39,9 +39,9 @@ def test_level_values(logger_level, msg_level, enabled):
 
 
 @pytest.mark.parametrize('logger_level, msg, output', [
-    (inators_log.TRACE, u'foo', u'foo\n'),
-    (inators_log.DEBUG, u'bar', u''),
-    (inators_log.DISABLE, u'baz', u''),
+    (inators_log.TRACE, 'foo', 'foo\n'),
+    (inators_log.DEBUG, 'bar', ''),
+    (inators_log.DISABLE, 'baz', ''),
 ])
 def test_trace(logger_level, msg, output):
     logger = inators_log.getLogger(f'{__name__}.trace')

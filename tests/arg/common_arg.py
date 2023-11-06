@@ -1,4 +1,4 @@
-# Copyright (c) 2021 Renata Hodovan, Akos Kiss.
+# Copyright (c) 2021-2023 Renata Hodovan, Akos Kiss.
 #
 # Licensed under the BSD 3-Clause License
 # <LICENSE.rst or https://opensource.org/licenses/BSD-3-Clause>.
@@ -36,7 +36,7 @@ def _test_add_argument(add_argument_func, func_args, func_kwargs, sys_argv, exp)
             assert getattr(args, key) == value
 
 
-class MockNamespace(object):
+class MockNamespace:
 
     def __init__(self, **kwargs):
         for name, value in kwargs.items():
