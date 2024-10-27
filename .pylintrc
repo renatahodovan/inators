@@ -18,6 +18,7 @@ disable=
     redefined-builtin,
     too-few-public-methods,
     too-many-arguments,
+    too-many-positional-arguments,
     unused-argument,
     unused-wildcard-import,
     useless-option-value,  # disables warning in recent pylint that does not check for no-self-use anymore
