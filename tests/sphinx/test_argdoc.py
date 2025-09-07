@@ -1,4 +1,4 @@
-# Copyright (c) 2021-2023 Renata Hodovan, Akos Kiss.
+# Copyright (c) 2021-2025 Renata Hodovan, Akos Kiss.
 #
 # Licensed under the BSD 3-Clause License
 # <LICENSE.rst or https://opensource.org/licenses/BSD-3-Clause>.
@@ -24,27 +24,25 @@ add_foo_argument.argdoc = [
     '''
     Add ``--foo`` command-line argument to ``parser``.
 
+    .. rubric:: Command-line Interface:
+    .. code-block:: none
 
-    Command-line interface
-        .. code-block:: none
+        usage: [--foo FOO]
 
-            usage: [--foo FOO]
-
-            optional arguments:
-              --foo FOO  foo argument
+        optional arguments:
+          --foo FOO  foo argument
 
     ''',
     '''
     Add ``--foo`` command-line argument to ``parser``.
 
+    .. rubric:: Command-line Interface:
+    .. code-block:: none
 
-    Command-line interface
-        .. code-block:: none
+        usage: [--foo FOO]
 
-            usage: [--foo FOO]
-
-            options:
-              --foo FOO  foo argument
+        options:
+          --foo FOO  foo argument
 
     ''',
 ]
@@ -62,27 +60,25 @@ add_bar_argument.argdoc = [
     '''
     Add ``--bar`` command-line argument to ``parser``.
 
+    .. rubric:: Command-line Interface:
+    .. code-block:: none
 
-    Command-line interface
-        .. code-block:: none
+        usage: [--bar BAR]
 
-            usage: [--bar BAR]
-
-            optional arguments:
-              --bar BAR  bar argument (default: 42)
+        optional arguments:
+          --bar BAR  bar argument (default: 42)
 
     ''',
     '''
     Add ``--bar`` command-line argument to ``parser``.
 
+    .. rubric:: Command-line Interface:
+    .. code-block:: none
 
-    Command-line interface
-        .. code-block:: none
+        usage: [--bar BAR]
 
-            usage: [--bar BAR]
-
-            options:
-              --bar BAR  bar argument (default: 42)
+        options:
+          --bar BAR  bar argument (default: 42)
 
     ''',
 ]
