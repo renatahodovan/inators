@@ -1,4 +1,4 @@
-# Copyright (c) 2021 Renata Hodovan, Akos Kiss.
+# Copyright (c) 2021-2025 Renata Hodovan, Akos Kiss.
 #
 # Licensed under the BSD 3-Clause License
 # <LICENSE.rst or https://opensource.org/licenses/BSD-3-Clause>.
@@ -62,10 +62,10 @@ def argdoc(app, what, name, obj, options, lines):
             obj(parser, **kwargs)
             replacement = textwrap.dedent("""
 
-                Command-line interface
-                    .. code-block:: none
+            .. rubric:: Command-line Interface:
+            .. code-block:: none
 
-            """) + textwrap.indent(parser.format_help(), ' ' * 8)
+            """) + textwrap.indent(parser.format_help(), ' ' * 4)
             replacement = textwrap.indent(replacement, indent).splitlines()
             lines[i:i + 1] = replacement[:]
             break
